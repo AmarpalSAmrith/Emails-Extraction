@@ -13,7 +13,6 @@ public class Part3Hashmaps {
     public static void main(String[] args) throws IOException {
 
         Path path = Paths.get("SampleText.txt");
-        int instances = 0;
         String entireFile = new String(Files.readAllBytes(path));
         String[] splitString = entireFile.split("\\s+");
         HashMap <String, Integer> storeDomains = new HashMap<>();
@@ -42,13 +41,12 @@ public class Part3Hashmaps {
                     counter--;
                 }
             case "frequency":
-                int
-                for (int i = 0; i < storeDomains.size(); i++) {
-                    if
+                int requestValue = Utilities.requestInt("To obtain the number of times a domain name occurs, please enter a frequency ", 1);
+                for (String domainName : storeDomains.keySet()) {
+                    if (storeDomains.get(domainName) > requestValue) {
+                        System.out.println(domainName + " with a value of " + storeDomains.get(domainName));
+                    }
                 }
-
         }
-
     }
-
 }
