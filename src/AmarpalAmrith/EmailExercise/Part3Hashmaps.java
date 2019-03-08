@@ -18,7 +18,7 @@ public class Part3Hashmaps {
         HashMap <String, Integer> storeDomains = new HashMap<>();
 
         for (int i = 0; i < splitString.length; i++) {
-            Pattern searchStore = Pattern.compile(".+@(.+\\..+)");
+            Pattern searchStore = Pattern.compile(".+@([^\\.]+)\\..+");
             Matcher searchString = searchStore.matcher(splitString[i]);
             boolean containsString = searchString.matches();
             if (containsString) {
@@ -47,6 +47,8 @@ public class Part3Hashmaps {
                         System.out.println(domainName + " with a value of " + storeDomains.get(domainName));
                     }
                 }
+            case "all":
+                System.out.println(storeDomains);
         }
     }
 }
